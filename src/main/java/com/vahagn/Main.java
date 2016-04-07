@@ -18,7 +18,7 @@ public class Main {
         try(Connection connection=DriverManager.getConnection(URL,USERNAME,PASSWORD); Statement statement=connection.createStatement()) {
             Driver driver=new FabricMySQLDriver();
             DriverManager.registerDriver(driver);
-            //statement.execute("insert into users (name, age, email) VALUES ('Steve',45,'steve@mail.ru')");
+            statement.execute("insert into users (name, age, email) VALUES ('Steve',45,'steve@mail.ru')");
            ResultSet resultSet= statement.executeQuery("select * from users");
            while (resultSet.next()){
                User user=new User();
